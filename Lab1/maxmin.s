@@ -1,8 +1,7 @@
     .data
 array:  .word 13, 34, 16, 61, 28
         .word 24, 58, 11, 26, 41
-        .word 19, 7, 38, 12, 13
-len: .word 15
+len: .word 10
 hdr:    .ascii "\nprogram to find max and"
         .asciiz " min\n\n"
 newLine: .asciiz "\n"
@@ -34,9 +33,10 @@ NotMin:
     move $s3, $t4 # set new max
 NotMax:
     sub $t1, $t1, 1 
-    addu $s0, $s0, 4 # move to next address
+    addiu $s0, $s0, 4 # move to next address
     bnez $t1, loop
-
+    sw $s2,4($s0)
+    sw $s3,8($s0)
     la $a0, a1Msg
     li $v0, 4
     syscall 
