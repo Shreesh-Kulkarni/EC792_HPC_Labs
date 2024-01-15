@@ -1,5 +1,5 @@
     .data
-array1:  .word 13, 34, 16, 61, 28
+array1:  .word 13, 34, 16, 61
 array2:  .word 8, 7, 2, 6, 0
 len:     .word 5
     .text
