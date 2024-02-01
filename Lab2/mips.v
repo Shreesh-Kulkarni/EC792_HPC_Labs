@@ -1,0 +1,25 @@
+module mips(clk, reset);
+//main cpu module
+
+input clk;
+input reset;
+
+wire [5:0] OpCode;
+wire [4:0] shamt;
+
+wire [1:0] ALUOp;
+
+wire RegDst;
+wire ALUSrc;
+wire MemToReg;
+wire RegWrite;                                                                                                                                                 
+wire MemRead;
+wire MemWrite;
+wire Branch;
+wire Jump;
+
+datapath Datapath(clk,reset,RegDst,ALUSrc,MemToReg,RegWrite,MemRead,MemWrite,Branch,Jump,ALUOp,OpCode,shamt);
+
+control Control(OpCode,RegDst,ALUSrc,MemToReg,RegWrite,MemRead,MemWrite,Branch,Jump,ALUOp); 
+
+endmodule
