@@ -1,0 +1,18 @@
+00023140 //sll-shift amount=5bits
+08000002 //jump- unconcatenated jump offset=2
+158d0004 //bne- offset=4
+20430007 //addi- immediate value is 7 and register is r2 value=2
+00004020
+00007020
+8d090040
+8d0a0044//branch target address
+8d0b0048
+ad00004c// jump target
+8d0c0000
+8dcd004c
+01ac6820
+adcd004c
+012a4822
+010b4020
+11200001 //beq
+1129fff8 //beq
